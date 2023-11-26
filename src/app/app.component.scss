@@ -15,3 +15,8 @@
   display: flex;
   gap: 5px;
 }
+.logo-image {
+  width: 200px; /* ajuste conforme necessário */
+  height: auto; /* para manter a proporção da imagem */
+  margin-right: 10px; /* ou qualquer valor que você preferir */
+}

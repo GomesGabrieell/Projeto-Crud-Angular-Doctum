@@ -12,14 +12,6 @@ import { EmployeeService } from '../services/employee.service';
 export class EmpAddEditComponent implements OnInit {
   empForm: FormGroup;
 
-  education: string[] = [
-    'Matric',
-    'Diploma',
-    'Intermediate',
-    'Graduate',
-    'Post Graduate',
-  ];
-
   constructor(
     private _fb: FormBuilder,
     private _empService: EmployeeService,
@@ -31,12 +23,7 @@ export class EmpAddEditComponent implements OnInit {
       firstName: '',
       lastName: '',
       email: '',
-      dob: '',
-      gender: '',
-      education: '',
-      company: '',
       experience: '',
-      package: '',
     });
   }
 
@@ -51,7 +38,7 @@ export class EmpAddEditComponent implements OnInit {
           .updateEmployee(this.data.id, this.empForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('Employee detail updated!');
+              this._coreService.openSnackBar('Atualizado!');
               this._dialogRef.close(true);
             },
             error: (err: any) => {
@@ -61,7 +48,7 @@ export class EmpAddEditComponent implements OnInit {
       } else {
         this._empService.addEmployee(this.empForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Employee added successfully');
+            this._coreService.openSnackBar('Sucesso');
             this._dialogRef.close(true);
           },
           error: (err: any) => {

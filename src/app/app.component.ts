@@ -18,12 +18,7 @@ export class AppComponent implements OnInit {
     'firstName',
     'lastName',
     'email',
-    'dob',
-    'gender',
-    'education',
-    'company',
     'experience',
-    'package',
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
@@ -75,7 +70,7 @@ export class AppComponent implements OnInit {
   deleteEmployee(id: number) {
     this._empService.deleteEmployee(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Employee deleted!', 'done');
+        this._coreService.openSnackBar('Deletado');
         this.getEmployeeList();
       },
       error: console.log,
